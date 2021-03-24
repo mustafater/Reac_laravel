@@ -19,5 +19,30 @@ class ProductController extends Controller
         $product->save();
         $donus= $product;
         return  $donus;
-    }   
+    }
+    
+    function list()
+    {
+        return Product::all();
+    }
+    function delete($id)
+    {
+        $result=Product::where('id',$id)->delete();
+        if($result){
+            return ["ürün silindi.."];
+
+        }
+    }
+    function getProduct($id)
+    {
+        //$list=Product::where('id',$id)->first()-get();
+        return  Product::find($id);
+    }
+
+    function search($key)
+    {
+        $list=Product::where('name','Like','%$key%')-get();
+        return $list;
+    }
+  
 }

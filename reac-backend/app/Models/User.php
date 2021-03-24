@@ -22,6 +22,19 @@ class User extends Authenticatable
         'password',
     ];
 
+        /*
+         function productadd(Request $request)
+    {
+       /* $product= new Product;
+        $product->name=$request->input('name');
+        $product->price=$request->input('price');
+        $product->description=$request->input('description');
+        $product->file_path=$request->file('file')->store('products');
+        $product->save();
+        $donus= $product;
+        return  $request->input();
+    }   */
+
     /**
      * The attributes that should be hidden for arrays.
      *

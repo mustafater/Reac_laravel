@@ -18,4 +18,14 @@ class UserController extends Controller
         $user->save();
         return  $user;
     }
+    function login(Request $request)
+    {
+        $user=User::where('email',$request->email)->first();
+        if(!$user)
+        {
+            return ["error"=>"Email veya sifre hatalı!!"];
+        }
+        return  $user;
+
+    }
 }
